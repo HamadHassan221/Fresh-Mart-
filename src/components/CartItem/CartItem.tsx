@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-
+import { useEffect } from "react"
 interface CartItemProps {
   item: any;
   onRemove?: (id: string) => void;

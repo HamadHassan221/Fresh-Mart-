@@ -1,5 +1,4 @@
 'use client'
-
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -20,9 +19,9 @@ import { useEffect, useRef } from "react"
 
 export default function Checkout({ cartId }: { cartId: string }) {
 
-    let detailsinput = useRef<HTMLInputElement | null>(null);
-    let cityinput = useRef<HTMLInputElement | null>(null);
-    let phoneinput = useRef<HTMLInputElement | null>(null);
+    const cityinput = useRef<HTMLInputElement | null>(null);
+    const phoneinput = useRef<HTMLInputElement | null>(null);
+    const detailsinput = useRef<HTMLInputElement | null>(null);
 
     async function handleCheckout(cartId: string, address: any) {
         try {

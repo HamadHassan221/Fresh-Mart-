@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 export function LoginForm() {
 
-    let searchparams = useSearchParams();
+    const searchparams = useSearchParams();
     const [isloading, setisloading] = useState(false);
     
     const router = useRouter();
