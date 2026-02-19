@@ -1,13 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getServerUserToken } from "@/getUserToken/getServerUserToken";
 
 const API_BASE = process.env.API_BASE;
 
 export async function POST(
-  req: Request,
-  { params }: { params: { id: string } }
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const cartId = params.id;
+  const { id: cartId } = await params;
   const token = await getServerUserToken();
   const body = await req.json();
 
